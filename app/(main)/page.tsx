@@ -1,46 +1,10 @@
 "use client";
-import { signOut, useSession } from "next-auth/react";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+
 
 export default function Home() {
-  const { status } = useSession();
-  const router = useRouter();
-
-  const showSession = () => {
-    if (status === "authenticated") {
-      return (
-        <button
-          className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-          onClick={() => {
-            signOut({ redirect: false }).then(() => {
-              router.push("/");
-            });
-          }}
-        >
-          Sign Out
-        </button>
-      );
-    } else if (status === "loading") {
-      return <span className="text-[#888] text-sm mt-7">Loading...</span>;
-    } else {
-      return (
-        <Link
-          href="/login"
-          className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-        >
-          Sign In
-        </Link>
-      );
-    }
-  };
+  
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center">
-        <h1 className="text-xl pb-4">Home</h1>
-        {showSession()}
-      </main>
       {/* <!-- Hero Section --> */}
       <section className="hero-section text-white">
         <div className="container mx-auto px-4 py-24">
@@ -154,7 +118,7 @@ export default function Home() {
             {/* <!-- Event Card 1 --> */}
             <div className="event-card bg-white rounded-xl overflow-hidden shadow-sm transition duration-300">
               <div className="relative">
-                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Music Festival" className="w-full h-48 object-cover" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="banner" className="w-full h-48 object-cover" />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow">
                   <i className="fas fa-music mr-1 text-indigo-600"></i> Music
                 </div>
@@ -183,7 +147,7 @@ export default function Home() {
             {/* <!-- Event Card 2 --> */}
             <div className="event-card bg-white rounded-xl overflow-hidden shadow-sm transition duration-300">
               <div className="relative">
-                <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tech Conference" className="w-full h-48 object-cover" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tech Conference" className="w-full h-48 object-cover" />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow">
                   <i className="fas fa-laptop-code mr-1 text-blue-600"></i> Tech
                 </div>
@@ -212,7 +176,7 @@ export default function Home() {
             {/* <!-- Event Card 3 --> */}
             <div className="event-card bg-white rounded-xl overflow-hidden shadow-sm transition duration-300">
               <div className="relative">
-                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Food Festival" className="w-full h-48 object-cover" />
+                <img loading="lazy" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Food Festival" className="w-full h-48 object-cover" />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow">
                   <i className="fas fa-utensils mr-1 text-red-600"></i> Food
                 </div>
@@ -253,7 +217,7 @@ export default function Home() {
             <div className="testimonial-card bg-white p-8 rounded-xl shadow-sm">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0">
-                  <img className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" />
+                  <img loading="lazy" className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" />
                 </div>
                 <div className="ml-4">
                   <div className="font-bold">Sarah Johnson</div>
@@ -273,7 +237,7 @@ export default function Home() {
             <div className="testimonial-card bg-white p-8 rounded-xl shadow-sm">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0">
-                  <img className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/43.jpg" alt="Michael Chen" />
+                  <img loading="lazy" className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/43.jpg" alt="Michael Chen" />
                 </div>
                 <div className="ml-4">
                   <div className="font-bold">Michael Chen</div>
@@ -293,7 +257,7 @@ export default function Home() {
             <div className="testimonial-card bg-white p-8 rounded-xl shadow-sm">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0">
-                  <img className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez" />
+                  <img loading="lazy" className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez" />
                 </div>
                 <div className="ml-4">
                   <div className="font-bold">Emily Rodriguez</div>

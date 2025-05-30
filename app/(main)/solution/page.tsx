@@ -1,9 +1,8 @@
 import React from 'react'
-
+import Image from 'next/image'
 export default function SolutionPage() {
     return (
         <>
-
             <section className="py-20">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
@@ -80,7 +79,7 @@ export default function SolutionPage() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {/* <!-- Template 1 --> */}
                         <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                            <img src="https://via.placeholder.com/400x250?text=Conference" alt="Conference Template" className="w-full" />
+                            <img loading='lazy' src="https://via.placeholder.com/400x250?text=Conference" alt="Conference Template" className="w-full" />
                             <div className="p-6">
                                 <h3 className="font-bold text-lg mb-2">Conference</h3>
                                 <p className="text-gray-600 text-sm">Professional design for business events</p>
@@ -89,7 +88,7 @@ export default function SolutionPage() {
 
                         {/* <!-- Template 2 --> */}
                         <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                            <img src="https://via.placeholder.com/400x250?text=Music+Festival" alt="Music Festival Template" className="w-full" />
+                            <img loading='lazy' src="https://via.placeholder.com/400x250?text=Music+Festival" alt="Music Festival Template" className="w-full" />
                             <div className="p-6">
                                 <h3 className="font-bold text-lg mb-2">Music Festival</h3>
                                 <p className="text-gray-600 text-sm">Vibrant design for entertainment events</p>
@@ -98,7 +97,7 @@ export default function SolutionPage() {
 
                         {/* <!-- Template 3 --> */}
                         <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                            <img src="https://via.placeholder.com/400x250?text=Wedding" alt="Wedding Template" className="w-full" />
+                            <img loading='lazy' src="https://via.placeholder.com/400x250?text=Wedding" alt="Wedding Template" className="w-full" />
                             <div className="p-6">
                                 <h3 className="font-bold text-lg mb-2">Wedding</h3>
                                 <p className="text-gray-600 text-sm">Elegant design for personal celebrations</p>
@@ -107,7 +106,7 @@ export default function SolutionPage() {
 
                         {/* <!-- Template 4 --> */}
                         <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                            <img src="https://via.placeholder.com/400x250?text=Charity" alt="Charity Template" className="w-full" />
+                            <img loading='lazy' src="https://via.placeholder.com/400x250?text=Charity" alt="Charity Template" className="w-full" />
                             <div className="p-6">
                                 <h3 className="font-bold text-lg mb-2">Charity</h3>
                                 <p className="text-gray-600 text-sm">Compassionate design for fundraisers</p>
@@ -178,7 +177,7 @@ export default function SolutionPage() {
                             </div>
                         </div>
                         <div className="lg:w-1/2">
-                            <img src="https://via.placeholder.com/600x400?text=Website+Builder+Interface" alt="Website Builder Interface" className="w-full rounded-xl shadow-lg" />
+                            <img loading='lazy' src="https://via.placeholder.com/600x400?text=Website+Builder+Interface" alt="Website Builder Interface" className="w-full rounded-xl shadow-lg" />
                         </div>
                     </div>
                 </div>
@@ -206,7 +205,7 @@ export default function SolutionPage() {
                             </div>
                             <p className="text-gray-600 mb-6">"The EventX website builder saved us countless hours. We created a professional conference website in one afternoon that would have taken weeks with a developer."</p>
                             <div className="flex items-center">
-                                <img className="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" />
+                                <img loading='lazy' className="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" />
                                 <div>
                                     <h4 className="font-bold">Sarah Johnson</h4>
                                     <p className="text-gray-500 text-sm">Event Director, TechConf 2023</p>
@@ -227,7 +226,7 @@ export default function SolutionPage() {
                             </div>
                             <p className="text-gray-600 mb-6">"Our ticket sales increased by 40% after switching to EventX. The mobile-friendly design and seamless checkout process made all the difference."</p>
                             <div className="flex items-center">
-                                <img className="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael Chen" />
+                                <img loading='lazy' className="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael Chen" />
                                 <div>
                                     <h4 className="font-bold">Michael Chen</h4>
                                     <p className="text-gray-500 text-sm">Marketing Manager, MusicFest Inc.</p>
@@ -248,7 +247,7 @@ export default function SolutionPage() {
                             </div>
                             <p className="text-gray-600 mb-6">"As a nonprofit, we needed an affordable solution that still looked professional. EventX delivered beyond our expectations for our annual fundraiser."</p>
                             <div className="flex items-center">
-                                <img className="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez" />
+                                <img loading='lazy' className="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez" />
                                 <div>
                                     <h4 className="font-bold">Emily Rodriguez</h4>
                                     <p className="text-gray-500 text-sm">Director, Hope Foundation</p>

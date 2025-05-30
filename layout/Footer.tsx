@@ -1,5 +1,5 @@
+"use client";
 import React from 'react'
-import Image from "next/image"
 export default function Footer() {
     return (
         <footer className="bg-gray-900 text-white pt-16 pb-8">
@@ -7,7 +7,8 @@ export default function Footer() {
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
                     <div className="col-span-2">
                         <a href="#" className="text-2xl font-bold text-white flex items-center mb-4">
-                            <Image
+                            <img
+                                loading='lazy'
                                 src="/images/logo-footer.png"
                                 alt="K2Tech Logo"
                                 width={70} // optional, you can specify width/height

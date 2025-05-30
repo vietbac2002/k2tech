@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/layout/Navbar";
-import Footer from "@/layout/Footer";
+import dynamic from 'next/dynamic'
+const Navbar = dynamic(() => import("@/layout/Navbar"));
+const Footer = dynamic(() => import("@/layout/Footer"));
 import { Provider } from "./provider";
 
 const geistSans = Geist({
@@ -46,15 +47,19 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></link>
-
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/react-quill@1.3.3/dist/quill.snow.css"
+        />
       </head>
       <Provider>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <main>
+            {children}
+          </main>
+
         </body>
       </Provider>
     </html>
