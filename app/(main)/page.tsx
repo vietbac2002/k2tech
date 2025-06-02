@@ -1,54 +1,33 @@
 "use client";
 
+import Link from "next/link";
+
 
 export default function Home() {
-  
+
   return (
     <>
       {/* <!-- Hero Section --> */}
       <section className="hero-section text-white">
         <div className="container mx-auto px-4 py-24">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Create & Manage Events Like Never Before</h1>
-            <p className="text-xl md:text-2xl mb-8">The all-in-one platform for event organizers to create, promote, and sell tickets to amazing events.</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Giải pháp Check-in & Quản lý sự kiện chuyên nghiệp </h1>
+            <p className="text-xl md:text-2xl mb-8">TPhần mềm check-in toàn diện dành cho nhà tổ chức sự kiện, với nhập dữ liệu từ Excel, tích hợp mã QR và xây dụng trang đăng ký chuyên nghiệp</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="#" className="px-8 py-4 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-100 transition">Create Event</a>
+              <Link href="/price" className="px-8 py-4 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-100 transition">Create Event</Link>
               <a href="#" className="px-8 py-4 bg-transparent border-2 border-white font-bold rounded-lg hover:bg-white hover:text-indigo-600 transition">Explore Events</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* <!-- Stats Section --> */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="stats-item bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-4xl font-bold text-indigo-600 mb-2">50K+</div>
-              <div className="text-gray-600">Events Created</div>
-            </div>
-            <div className="stats-item bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-4xl font-bold text-indigo-600 mb-2">2M+</div>
-              <div className="text-gray-600">Tickets Sold</div>
-            </div>
-            <div className="stats-item bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-4xl font-bold text-indigo-600 mb-2">10K+</div>
-              <div className="text-gray-600">Happy Organizers</div>
-            </div>
-            <div className="stats-item bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-4xl font-bold text-indigo-600 mb-2">100+</div>
-              <div className="text-gray-600">Countries</div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* <!-- Features Section --> */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Powerful Features for Event Success</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to create, manage, and grow your events in one place.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Các tính năng chính</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -56,48 +35,48 @@ export default function Home() {
               <div className="feature-icon bg-indigo-100 text-indigo-600">
                 <i className="fas fa-ticket-alt text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">Ticketing & Registration</h3>
-              <p className="text-gray-600">Sell tickets online with multiple ticket types, discounts, and promo codes. Manage attendees with ease.</p>
+              <h3 className="text-xl font-bold mb-3">Check-in thông minh</h3>
+              <p className="text-gray-600">Sử dụng công nghệ nhận diện mã QR/Barcode, giúp quá trình tiếp đón khách diễn ra nhanh chóng, chính xác.</p>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
               <div className="feature-icon bg-purple-100 text-purple-600">
                 <i className="fas fa-chart-line text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">Analytics Dashboard</h3>
-              <p className="text-gray-600">Get real-time insights into ticket sales, attendee demographics, and event performance metrics.</p>
+              <h3 className="text-xl font-bold mb-3">Nhập dữ liệu linh hoạt</h3>
+              <p className="text-gray-600">Hỗ trợ import danh sách khách mời từ file Excel, tiết kiệm công sức và giảm thiểu sai sót thủ công.</p>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
               <div className="feature-icon bg-blue-100 text-blue-600">
                 <i className="fas fa-envelope-open-text text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">Email Marketing</h3>
-              <p className="text-gray-600">Send targeted email campaigns to promote your event and keep attendees engaged.</p>
+              <h3 className="text-xl font-bold mb-3">Trang đăng ký chuyên nghiệp</h3>
+              <p className="text-gray-600">Cung cấp form đăng ký sự kiện tối ưu về mặt trải nghiệm, dễ tùy chỉnh giao diện và đồng bộ với bộ nhận diện thương hiệu.</p>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
               <div className="feature-icon bg-green-100 text-green-600">
                 <i className="fas fa-check-circle text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">Check-in App</h3>
-              <p className="text-gray-600">Fast and secure check-in for your attendees with our mobile app and QR code scanning.</p>
+              <h3 className="text-xl font-bold mb-3">Gói dịch vụ đa quy mô</h3>
+              <p className="text-gray-600">Thiết kế linh hoạt từ sự kiện nhỏ (vài chục khách) đến sự kiện quy mô lớn (hàng ngàn khách), đáp ứng nhu cầu tổ chức đa dạng.</p>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
               <div className="feature-icon bg-yellow-100 text-yellow-600">
                 <i className="fas fa-users text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">Networking Tools</h3>
-              <p className="text-gray-600">Help attendees connect with each other through our networking features and matchmaking.</p>
+              <h3 className="text-xl font-bold mb-3">Báo cáo và thống kê thời gian thực</h3>
+              <p className="text-gray-600">Cung cấp dashboard tổng hợp số liệu check-in, số lượng khách đã xác nhận, tình hình chỗ ngồi giúp ban tổ chức nắm bắt nhanh và đưa ra quyết định kịp thời.</p>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
               <div className="feature-icon bg-red-100 text-red-600">
                 <i className="fas fa-video text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">Virtual Events</h3>
-              <p className="text-gray-600">Host hybrid or fully virtual events with integrated video streaming and interactive features.</p>
+              <h3 className="text-xl font-bold mb-3">Hệ thống bảo mật và hỗ trợ 24/7</h3>
+              <p className="text-gray-600">Đảm bảo dữ liệu khách mời được bảo vệ chặt chẽ, đồng thời đội ngũ hỗ trợ luôn sẵn sàng giải đáp và xử lý sự cố bất cứ lúc nào</p>
             </div>
           </div>
         </div>
@@ -224,7 +203,7 @@ export default function Home() {
                   <div className="text-gray-600">Event Manager, TechConf</div>
                 </div>
               </div>
-              <p className="text-gray-600 mb-6">"EventX has transformed how we organize our annual tech conference. The ticketing system is seamless, and the analytics help us make data-driven decisions."</p>
+              <p className="text-gray-600 mb-6">K2Tech has transformed how we organize our annual tech conference. The ticketing system is seamless, and the analytics help us make data-driven decisions."</p>
               <div className="flex text-yellow-400">
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
@@ -264,7 +243,7 @@ export default function Home() {
                   <div className="text-gray-600">Marketing Director, MusicFest</div>
                 </div>
               </div>
-              <p className="text-gray-600 mb-6">"We've increased our ticket sales by 40% since switching to EventX. The marketing tools and integrations are game-changers for event promotion."</p>
+              <p className="text-gray-600 mb-6">"We've increased our ticket sales by 40% since switching to K2Tech. The marketing tools and integrations are game-changers for event promotion."</p>
               <div className="flex text-yellow-400">
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
@@ -282,7 +261,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Create Your Next Event?</h2>
-            <p className="text-xl mb-8">Join thousands of event organizers who trust EventX to power their events.</p>
+            <p className="text-xl mb-8">Join thousands of event organizers who trust K2Tech to power their events.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="#" className="px-8 py-4 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-100 transition">Get Started for Free</a>
               <a href="#" className="px-8 py-4 bg-transparent border-2 border-white font-bold rounded-lg hover:bg-white hover:text-indigo-600 transition">Schedule a Demo</a>

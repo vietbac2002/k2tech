@@ -1,13 +1,36 @@
 import React from 'react'
 
+
+const features = [
+    {
+        feature: "Nhập dữ liệu Excel",
+        free: "✅",
+        pro: "✅",
+        enterprise: "✅"
+    },
+    {
+        feature: "Check-in mã QR",
+        free: "✅",
+        pro: "✅",
+        enterprise: "✅"
+    },
+    {
+        feature: "Hệ thống bảo mật và hỗ trợ 24/7",
+        free: "✅",
+        pro: "✅",
+        enterprise: "🚫"
+    },
+
+]
+
 export default function PricePage() {
     return (
         <div>
             <section className="py-20">
                 <div className="container mx-auto px-4">                    <div className="max-w-3xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Simple, Transparent Pricing</h1>
-                        <p className="text-xl md:text-2xl mb-8">Choose the perfect plan for your event needs. No hidden fees, cancel anytime.</p>
-                    </div>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Mức giá linh hoạt phù hợp với nhu cầu</h1>
+                    <p className="text-xl md:text-2xl mb-8">Chọn gói hoàn hảo cho nhu cầu sự kiện của bạn. Không có phí ẩn, hủy bất cứ lúc nào</p>
+                </div>
                 </div>
             </section>
             <section className="py-20 bg-gray-50">
@@ -16,33 +39,30 @@ export default function PricePage() {
                         {/* <!-- Free Plan --> */}
                         <div className="pricing-card bg-white rounded-xl shadow-sm p-8 transition duration-300">
                             <div className="mb-6">
-                                <h3 className="text-xl font-bold mb-2">Free</h3>
-                                <p className="text-gray-600 mb-4">Perfect for small events and getting started</p>
-                                <div className="text-4xl font-bold mb-2">$0<span className="text-lg font-normal text-gray-500">/month</span></div>
-                                <p className="text-gray-500 text-sm">Free forever</p>
+                                <h3 className="text-xl font-bold mb-2">K2-Checkin Basic</h3>
+                                <p className="text-gray-600 mb-4">Dành cho sự kiện nhỏ dưới 100 người</p>
+                                <div className="text-4xl font-bold mb-2">1.000.000 VNĐ</div>
                             </div>
-                            <a href="#" className="block w-full py-3 px-6 text-center border border-gray-300 rounded-lg font-medium hover:bg-gray-50 mb-8">Get Started</a>
+                            <a href="#" className="block w-full py-3 px-6 text-center border border-gray-300 rounded-lg font-medium hover:bg-gray-50 mb-8">Đăng ký ngay</a>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Up to 100 attendees</span>
+                                    <span>Hỗ trợ nhập dữ liệu khách mời từ file Excel</span>
                                 </li>
                                 <li className="flex items-start">
                                     <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Basic ticketing</span>
+                                    <span>Check-in nhanh chóng bằng mã QR</span>
                                 </li>
                                 <li className="flex items-start">
                                     <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
                                     <span>Email support</span>
                                 </li>
+
+                                {/* note */}
                                 <li className="flex items-start text-gray-400">
-                                    <i className="fas fa-times mt-1 mr-2"></i>
-                                    <span>No analytics dashboard</span>
+                                    <span>Lưu ý: Phần mềm không bao gồm thiết bị check-in</span>
                                 </li>
-                                <li className="flex items-start text-gray-400">
-                                    <i className="fas fa-times mt-1 mr-2"></i>
-                                    <span>No custom branding</span>
-                                </li>
+
                             </ul>
                         </div>
 
@@ -52,12 +72,11 @@ export default function PricePage() {
                                 POPULAR
                             </div>
                             <div className="mb-6">
-                                <h3 className="text-xl font-bold mb-2">Pro</h3>
-                                <p className="text-gray-600 mb-4">For growing events and businesses</p>
-                                <div className="text-4xl font-bold mb-2">$29<span className="text-lg font-normal text-gray-500">/month</span></div>
-                                <p className="text-gray-500 text-sm">Billed annually at $348</p>
+                                <h3 className="text-xl font-bold mb-2">K2-Checkin Advanced</h3>
+                                <p className="text-gray-600 mb-4">Dành cho sự kiện từ 100 đến 500 người</p>
+                                <div className="text-4xl font-bold mb-2">3.000.000 VNĐ</div>
                             </div>
-                            <a href="#" className="block w-full py-3 px-6 text-center bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 mb-8">Start Free Trial</a>
+                            <a href="#" className="block w-full py-3 px-6 text-center bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 mb-8">Đăng ký ngay</a>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
@@ -82,19 +101,18 @@ export default function PricePage() {
                             </ul>
                         </div>
 
-                        {/* <!-- Enterprise Plan --> */}
+                        {/* <!-- Professional Plan --> */}
                         <div className="pricing-card bg-white rounded-xl shadow-sm p-8 transition duration-300">
                             <div className="mb-6">
-                                <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-                                <p className="text-gray-600 mb-4">For large events and organizations</p>
-                                <div className="text-4xl font-bold mb-2">$99<span className="text-lg font-normal text-gray-500">/month</span></div>
-                                <p className="text-gray-500 text-sm">Billed annually at $1,188</p>
+                                <h3 className="text-xl font-bold mb-2">K2-Checkin Professional</h3>
+                                <p className="text-gray-600 mb-4">Dành cho sự kiện trên 500 người</p>
+                                <div className="text-4xl font-bold mb-2">{"≥ 5.000.000" + " VNĐ"}</div>
                             </div>
-                            <a href="#" className="block w-full py-3 px-6 text-center border border-gray-300 rounded-lg font-medium hover:bg-gray-50 mb-8">Contact Sales</a>
+                            <a href="#" className="block w-full py-3 px-6 text-center border border-gray-300 rounded-lg font-medium hover:bg-gray-50 mb-8">Đăng ký ngay</a>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Unlimited attendees</span>
+                                    <span>Hỗ trợ quy mô lớn, nhiều tính năng mở rộng</span>
                                 </li>
                                 <li className="flex items-start">
                                     <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
@@ -114,6 +132,34 @@ export default function PricePage() {
                                 </li>
                             </ul>
                         </div>
+
+                        {/* <!-- Landing Page Plan --> */}
+                        <div className="pricing-card bg-white rounded-xl shadow-sm p-8 transition duration-300 popular-plan relative">
+                            <div className="absolute top-0 right-0 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                                Bổ sung
+                            </div>
+                            <div className="mb-6">
+                                <h3 className="text-xl font-bold mb-2">Landing Page</h3>
+                                <div className="text-2xl font-bold mb-2">
+                                    <span>2.000.000 đến 4.000.000</span> <br />
+                                    <span className='text-sm font-normal text-gray-500'>(Phụ thuộc số lượng khách mời)</span>
+                                </div>
+                            </div>
+                            <a href="#" className="block w-full py-3 px-6 text-center border border-gray-300 rounded-lg font-medium hover:bg-gray-50 mb-8">Đăng ký ngay</a>
+
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Tạo trang đăng ký sự kiện chuyên nghiệp</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Hỗ trợ thiết kế và tối ưu trải nghiệm người dùng</span>
+                                </li>
+
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -122,69 +168,60 @@ export default function PricePage() {
             <section className="py-20">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Compare Features</h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">See how our plans stack up against each other</p>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">So sánh các tính năng</h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">Xem cách các gói chúng tôi với nhau</p>
                     </div>
 
                     <div className="overflow-x-auto mx-20">
                         <table className="w-full">
                             <thead>
                                 <tr className="border-b border-gray-200">
-                                    <th className="py-4 text-left font-medium">Feature</th>
-                                    <th className="py-4 text-center font-medium">Free</th>
-                                    <th className="py-4 text-center font-medium">Pro</th>
-                                    <th className="py-4 text-center font-medium">Enterprise</th>
+                                    <th className="py-4 text-left font-medium">Tính năng</th>
+                                    <th className="py-4 text-center font-medium">Basic</th>
+                                    <th className="py-4 text-center font-medium">Advanced</th>
+                                    <th className="py-4 text-center font-medium">Professional</th>
+                                    <th className='py-4 text-center font-medium'>Landing Page</th>
                                 </tr>
                             </thead>
                             <tbody>
+
+
                                 <tr className="border-b border-gray-200">
-                                    <td className="py-4 font-medium">Attendee Limit</td>
-                                    <td className="py-4 text-center">100</td>
-                                    <td className="py-4 text-center">1,000</td>
-                                    <td className="py-4 text-center">Unlimited</td>
-                                </tr>
-                                <tr className="border-b border-gray-200">
-                                    <td className="py-4 font-medium">Ticket Types</td>
-                                    <td className="py-4 text-center">1</td>
-                                    <td className="py-4 text-center">5</td>
-                                    <td className="py-4 text-center">Unlimited</td>
-                                </tr>
-                                <tr className="border-b border-gray-200">
-                                    <td className="py-4 font-medium">Custom Branding</td>
+                                    <td className="py-4 font-medium">Nhập dữ liệu Excel</td>
                                     <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
                                     <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
                                     <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
-                                </tr>
-                                <tr className="border-b border-gray-200">
-                                    <td className="py-4 font-medium">Analytics Dashboard</td>
-                                    <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
-                                    <td className="py-4 text-center">Basic</td>
-                                    <td className="py-4 text-center">Advanced</td>
-                                </tr>
-                                <tr className="border-b border-gray-200">
-                                    <td className="py-4 font-medium">Check-in App</td>
-                                    <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
-                                    <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
                                     <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
                                 </tr>
                                 <tr className="border-b border-gray-200">
-                                    <td className="py-4 font-medium">Email Support</td>
-                                    <td className="py-4 text-center">Standard</td>
-                                    <td className="py-4 text-center">Priority</td>
-                                    <td className="py-4 text-center">24/7</td>
+                                    <td className="py-4 font-medium">Check-in mã QR</td>
+                                    <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
+                                    <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
+                                    <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
+                                    <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
                                 </tr>
                                 <tr className="border-b border-gray-200">
-                                    <td className="py-4 font-medium">Phone Support</td>
+                                    <td className="py-4 font-medium">Hỗ trợ sự kiện quy mô lớn</td>
+                                    <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
+                                    <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
+                                    <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
+                                    <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
+                                </tr>
+                                <tr className="border-b border-gray-200">
+                                    <td className="py-4 font-medium">Tạo trang đăng ký sự kiện</td>
+                                    <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
                                     <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
                                     <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
                                     <td className="py-4 text-center"><i className="fas fa-check text-green-500"></i></td>
                                 </tr>
                                 <tr className="border-b border-gray-200">
-                                    <td className="py-4 font-medium">API Access</td>
-                                    <td className="py-4 text-center"><i className="fas fa-times text-red-500"></i></td>
-                                    <td className="py-4 text-center">Limited</td>
-                                    <td className="py-4 text-center">Full</td>
+                                    <td className="py-4 font-medium">Giá (VNĐ)</td>
+                                    <td className="py-4 text-center">1.000.000</td>
+                                    <td className="py-4 text-center">3.000.000</td>
+                                    <td className="py-4 text-center">Từ 5.000.000</td>
+                                    <td className="py-4 text-center">2.000.000 - 4.000.000</td>
                                 </tr>
+
                             </tbody>
                         </table>
                     </div>

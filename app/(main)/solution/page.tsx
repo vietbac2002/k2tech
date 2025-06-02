@@ -6,8 +6,7 @@ export default function SolutionPage() {
             <section className="py-20">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything You Need for Your Event Website</h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">From registration to promotion, we've got you covered</p>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Những công dụng và lợi ích dịch vụ chúng tôi mang lại</h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -16,8 +15,7 @@ export default function SolutionPage() {
                             <div className="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
                                 <i className="fas fa-paint-brush text-indigo-600 text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Drag-and-Drop Builder</h3>
-                            <p className="text-gray-600">Easily create beautiful event websites with our intuitive drag-and-drop editor. No coding skills required.</p>
+                            <h3 className="text-xl font-bold mb-3">Tổ chức sự kiện nhỏ, vừa, lớn nhanh chóng và hiệu quả</h3>
                         </div>
 
                         {/* <!-- Feature 2 --> */}
@@ -25,8 +23,7 @@ export default function SolutionPage() {
                             <div className="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
                                 <i className="fas fa-mobile-alt text-indigo-600 text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Mobile-Optimized</h3>
-                            <p className="text-gray-600">Your event website will look great on any device, with responsive designs that adapt to all screen sizes.</p>
+                            <h3 className="text-xl font-bold mb-3">Quản lý check-in khách mời chính xác, giảm thiểu sai sót</h3>
                         </div>
 
                         {/* <!-- Feature 3 --> */}
@@ -34,8 +31,7 @@ export default function SolutionPage() {
                             <div className="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
                                 <i className="fas fa-ticket-alt text-indigo-600 text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Integrated Registration</h3>
-                            <p className="text-gray-600">Seamless ticket sales and attendee registration directly from your event website.</p>
+                            <h3 className="text-xl font-bold mb-3">Tạo trang đăng ký chuyên nghiệp, thu hút người tham dự</h3>
                         </div>
 
                         {/* <!-- Feature 4 --> */}
@@ -43,8 +39,7 @@ export default function SolutionPage() {
                             <div className="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
                                 <i className="fas fa-palette text-indigo-600 text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Custom Branding</h3>
-                            <p className="text-gray-600">Match your event website to your brand with custom colors, fonts, and logos.</p>
+                            <h3 className="text-xl font-bold mb-3">Tiết kiệm thời gian check-in</h3>
                         </div>
 
                         {/* <!-- Feature 5 --> */}
@@ -52,8 +47,7 @@ export default function SolutionPage() {
                             <div className="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
                                 <i className="fas fa-chart-line text-indigo-600 text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Built-in Analytics</h3>
-                            <p className="text-gray-600">Track visitor behavior, conversion rates, and other key metrics to optimize your event marketing.</p>
+                            <h3 className="text-xl font-bold mb-3">Quản lý khách mời toàn diện</h3>
                         </div>
 
                         {/* <!-- Feature 6 --> */}
@@ -61,67 +55,16 @@ export default function SolutionPage() {
                             <div className="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
                                 <i className="fas fa-globe text-indigo-600 text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Multilingual Support</h3>
-                            <p className="text-gray-600">Create event websites in multiple languages to reach a global audience.</p>
+                            <h3 className="text-xl font-bold mb-3">Nâng cao trải nghiệm sự kiện</h3>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* <!-- Templates Section --> */}
-            <section className="py-20 bg-gray-50">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Stunning Templates for Every Event Type</h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">Choose from professionally designed templates that convert</p>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {/* <!-- Template 1 --> */}
-                        <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                            <img loading='lazy' src="https://via.placeholder.com/400x250?text=Conference" alt="Conference Template" className="w-full" />
-                            <div className="p-6">
-                                <h3 className="font-bold text-lg mb-2">Conference</h3>
-                                <p className="text-gray-600 text-sm">Professional design for business events</p>
-                            </div>
-                        </div>
-
-                        {/* <!-- Template 2 --> */}
-                        <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                            <img loading='lazy' src="https://via.placeholder.com/400x250?text=Music+Festival" alt="Music Festival Template" className="w-full" />
-                            <div className="p-6">
-                                <h3 className="font-bold text-lg mb-2">Music Festival</h3>
-                                <p className="text-gray-600 text-sm">Vibrant design for entertainment events</p>
-                            </div>
-                        </div>
-
-                        {/* <!-- Template 3 --> */}
-                        <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                            <img loading='lazy' src="https://via.placeholder.com/400x250?text=Wedding" alt="Wedding Template" className="w-full" />
-                            <div className="p-6">
-                                <h3 className="font-bold text-lg mb-2">Wedding</h3>
-                                <p className="text-gray-600 text-sm">Elegant design for personal celebrations</p>
-                            </div>
-                        </div>
-
-                        {/* <!-- Template 4 --> */}
-                        <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                            <img loading='lazy' src="https://via.placeholder.com/400x250?text=Charity" alt="Charity Template" className="w-full" />
-                            <div className="p-6">
-                                <h3 className="font-bold text-lg mb-2">Charity</h3>
-                                <p className="text-gray-600 text-sm">Compassionate design for fundraisers</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="text-center mt-12">
-                        <a href="#" className="inline-block px-8 py-3 border-2 border-indigo-600 text-indigo-600 font-bold rounded-lg hover:bg-indigo-600 hover:text-white transition">View All Templates</a>
-                    </div>
-                </div>
-            </section>
+          
 
             {/* <!-- How It Works Section --> */}
-            <section className="py-20">
+            {/* <section className="py-20">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
@@ -131,7 +74,6 @@ export default function SolutionPage() {
                     <div className="flex flex-col lg:flex-row items-center">
                         <div className="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
                             <div className="space-y-8">
-                                {/* <!-- Step 1 --> */}
                                 <div className="flex">
                                     <div className="flex-shrink-0 mr-6">
                                         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">1</div>
@@ -142,7 +84,6 @@ export default function SolutionPage() {
                                     </div>
                                 </div>
 
-                                {/* <!-- Step 2 --> */}
                                 <div className="flex">
                                     <div className="flex-shrink-0 mr-6">
                                         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">2</div>
@@ -153,7 +94,6 @@ export default function SolutionPage() {
                                     </div>
                                 </div>
 
-                                {/* <!-- Step 3 --> */}
                                 <div className="flex">
                                     <div className="flex-shrink-0 mr-6">
                                         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">3</div>
@@ -164,7 +104,6 @@ export default function SolutionPage() {
                                     </div>
                                 </div>
 
-                                {/* <!-- Step 4 --> */}
                                 <div className="flex">
                                     <div className="flex-shrink-0 mr-6">
                                         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 font-bold text-xl">4</div>
@@ -181,14 +120,13 @@ export default function SolutionPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* <!-- Testimonials Section --> */}
             <section className="py-20 bg-indigo-50">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from event organizers like you</p>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Khách hàng nói gì về chúng tôi</h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

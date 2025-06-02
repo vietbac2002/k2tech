@@ -6,12 +6,9 @@ export default function page() {
             <section className="gradient-bg text-white py-20">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Our Team</h1>
-                        <p className="text-xl mb-8">We're here to help with any questions or support needs you may have</p>
-                        <div className="flex justify-center space-x-4">
-                            <a href="#contact-form" className="px-8 py-3 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition">Send a Message</a>
-                            <a href="#contact-info" className="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-blue-700 transition">Contact Info</a>
-                        </div>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6">Liên hệ với chúng tôi</h1>
+                        <p className="text-xl mb-8">Chúng tôi sẽ giúp bạn với bất cứ câu hỏi hoặc hỗ trợ bạn nếu có thể</p>
+                       
                     </div>
                 </div>
             </section>
@@ -21,14 +18,14 @@ export default function page() {
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-sm p-8 md:p-12">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-                            <p className="text-xl text-gray-600">Fill out the htmlForm below and we'll get back to you as soon as possible</p>
+                            <h2 className="text-3xl font-bold mb-4">Liên hệ</h2>
+                            <p className="text-xl text-gray-600">Điền vào biểu mẫu dưới đây và chúng tôi sẽ trả lời bạn sớm nhất có thể</p>
                         </div>
 
                         <form className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label htmlFor="name" className="block text-lg font-medium text-gray-700 mb-2">Full Name <span className="text-red-500">*</span></label>
+                                    <label htmlFor="name" className="block text-lg font-medium text-gray-700 mb-2">Họ và tên <span className="text-red-500">*</span></label>
                                     <div className="relative">
                                         <input type="text" id="name" name="name" required
                                             className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:outline-none input-highlight transition"
@@ -40,7 +37,7 @@ export default function page() {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-2">Email Address <span className="text-red-500">*</span></label>
+                                    <label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-2">Email <span className="text-red-500">*</span></label>
                                     <div className="relative">
                                         <input type="email" id="email" name="email" required
                                             className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:outline-none input-highlight transition"
@@ -54,7 +51,7 @@ export default function page() {
 
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label htmlFor="phone" className="block text-lg font-medium text-gray-700 mb-2">Phone Number</label>
+                                    <label htmlFor="phone" className="block text-lg font-medium text-gray-700 mb-2">Số điện thoại</label>
                                     <div className="relative">
                                         <input type="tel" id="phone" name="phone"
                                             className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:outline-none input-highlight transition"
@@ -70,7 +67,7 @@ export default function page() {
                                     <div className="relative">
                                         <select id="subject" name="subject"
                                             className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:outline-none input-highlight transition appearance-none">
-                                            <option value="" defaultValue={""}>Select a subject</option>
+                                            <option value="" defaultValue={""}>Chọn một lĩnh vực</option>
                                             <option value="support">Technical Support</option>
                                             <option value="sales">Sales Inquiry</option>
                                             <option value="billing">Billing Question</option>
@@ -85,10 +82,10 @@ export default function page() {
                             </div>
 
                             <div>
-                                <label htmlFor="message" className="block text-lg font-medium text-gray-700 mb-2">Your Message <span className="text-red-500">*</span></label>
+                                <label htmlFor="message" className="block text-lg font-medium text-gray-700 mb-2">Lời nhắn của bạn <span className="text-red-500">*</span></label>
                                 <textarea id="message" name="message" rows={6} required
                                     className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:outline-none input-highlight transition"
-                                    placeholder="How can we help you?"></textarea>
+                                    placeholder="Tôi có thể giúp bạn như thế nào?"></textarea>
                             </div>
 
                             <div className="flex items-center">
@@ -101,7 +98,7 @@ export default function page() {
 
                             <div className="pt-4">
                                 <button type="submit" className="w-full md:w-auto px-12 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition flex items-center justify-center">
-                                    <i className="fas fa-paper-plane mr-3"></i> Send Message
+                                    <i className="fas fa-paper-plane mr-3"></i> Gửi tin nhắn
                                 </button>
                             </div>
                         </form>
@@ -112,7 +109,7 @@ export default function page() {
 
             <section id="contact-info" className="py-16">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12">Our Contact Information</h2>
+                    <h2 className="text-3xl font-bold text-center mb-12">Thông tin liên hệ của chúng tôi</h2>
 
                     <div className="grid md:grid-cols-3 gap-8 mb-12">
                         {/* <!-- Office Address --> */}

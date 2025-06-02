@@ -23,6 +23,13 @@ const formatContent = (text: string) => {
     });
 };
 
+const convertDate = (date: string) => {
+    //  2025-05-31T12:20:41.770Z
+    // convert date like above to "mm/dd/yyyy"
+    const dateParts = date.split("T")[0].split("-");
+    return `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+}
+
 
 export default function ArticleDetail({
     params,
@@ -61,7 +68,8 @@ export default function ArticleDetail({
                     {/* <!-- Meta Information --> */}
                     <div className="flex items-center text-sm text-gray-500 mb-6">
                         <span className="mr-4">
-                            Posted on <time dateTime="2023-05-15">{article.createdAt ?? ""}</time></span>
+                            Posted on <time dateTime="2023-05-15">{convertDate(article.createdAt)}</time>
+                        </span>
                         <span>5 min read</span>
                     </div>
 
@@ -85,16 +93,7 @@ export default function ArticleDetail({
                     </div>
                 </div>
 
-                {/* <!-- Author Info (optional) --> */}
-                <div className="border-t border-gray-200 px-6 py-4 md:px-8 bg-gray-50">
-                    <div className="flex items-center">
-                        <img className="h-10 w-10 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author avatar" />
-                        <div>
-                            <p className="text-sm font-medium text-gray-900">John Doe</p>
-                            <p className="text-sm text-gray-500">Web Developer & Blogger</p>
-                        </div>
-                    </div>
-                </div>
+
             </article>
         </main>
     )
