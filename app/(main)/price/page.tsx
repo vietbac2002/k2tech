@@ -1,26 +1,22 @@
 import React from 'react'
 
 
-const features = [
-    {
-        feature: "Nhập dữ liệu Excel",
-        free: "✅",
-        pro: "✅",
-        enterprise: "✅"
-    },
-    {
-        feature: "Check-in mã QR",
-        free: "✅",
-        pro: "✅",
-        enterprise: "✅"
-    },
-    {
-        feature: "Hệ thống bảo mật và hỗ trợ 24/7",
-        free: "✅",
-        pro: "✅",
-        enterprise: "🚫"
-    },
-
+const basicFeatures = [
+    "Hỗ trợ nhập dữ liệu khách mời từ file Excel",
+    "Check-in nhanh chóng bằng mã QR",
+    "Email support",
+]
+const advancedFeatures = [
+    "Số người tham dự từ 100 đến 500",
+    "Hỗ trợ nhập dữ liệu khách mời từ file Excel",
+    "Check-in nhanh chóng bằng mã QR",
+    "Email support",
+]
+const professionalFeatures = [
+    "Số người tham dự trên 500",
+    "Hỗ trợ nhập dữ liệu khách mời từ file Excel",
+    "Check-in nhanh chóng bằng mã QR",
+    "Email support",
 ]
 
 export default function PricePage() {
@@ -45,21 +41,15 @@ export default function PricePage() {
                             </div>
                             <a href="#" className="block w-full py-3 px-6 text-center border border-gray-300 rounded-lg font-medium hover:bg-gray-50 mb-8">Đăng ký ngay</a>
                             <ul className="space-y-4">
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Hỗ trợ nhập dữ liệu khách mời từ file Excel</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Check-in nhanh chóng bằng mã QR</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Email support</span>
-                                </li>
+                                {basicFeatures.map((item, index) => (
+                                    <li key={index} className="flex items-start">
+                                        <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
 
                                 {/* note */}
-                                <li className="flex items-start text-gray-400">
+                                <li className="flex items-start text-gray-500 font-medium">
                                     <span>Lưu ý: Phần mềm không bao gồm thiết bị check-in</span>
                                 </li>
 
@@ -78,26 +68,14 @@ export default function PricePage() {
                             </div>
                             <a href="#" className="block w-full py-3 px-6 text-center bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 mb-8">Đăng ký ngay</a>
                             <ul className="space-y-4">
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Up to 1,000 attendees</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Advanced ticketing</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Priority email support</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Basic analytics</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Custom branding</span>
-                                </li>
+                                {
+                                    advancedFeatures.map((item, index) => (
+                                        <li key={index} className="flex items-start">
+                                            <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))
+                                }
                             </ul>
                         </div>
 
@@ -110,26 +88,14 @@ export default function PricePage() {
                             </div>
                             <a href="#" className="block w-full py-3 px-6 text-center border border-gray-300 rounded-lg font-medium hover:bg-gray-50 mb-8">Đăng ký ngay</a>
                             <ul className="space-y-4">
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Hỗ trợ quy mô lớn, nhiều tính năng mở rộng</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Premium ticketing</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>24/7 phone support</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Advanced analytics</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>White-label options</span>
-                                </li>
+                                {
+                                    professionalFeatures.map((item, index) => (
+                                        <li key={index} className="flex items-start">
+                                            <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))
+                                }
                             </ul>
                         </div>
 

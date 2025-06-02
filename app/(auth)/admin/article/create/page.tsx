@@ -34,13 +34,13 @@ export default function CreateArticle() {
     const handleContentChange = (value: string) => {
         setBlog(prev => ({ ...prev, content: value }));
     };
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setBlog({
             ...blog,
             [e.target.name]: e.target.value,
         })
     }
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         await createArticle()
         // set blog is empty

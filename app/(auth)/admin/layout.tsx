@@ -2,17 +2,15 @@
 "use client";
 import { useState } from 'react';
 import {
-  DesktopOutlined,
   FileOutlined,
   PieChartOutlined,
-  TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { Layout, Menu, theme } from 'antd';
 import { useRouter } from 'next/navigation';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -47,9 +45,6 @@ export default function AdminLayout({
 }) {
   const [collapsed, setCollapsed] = useState(false);
   const route = useRouter();
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => {

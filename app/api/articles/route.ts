@@ -1,6 +1,5 @@
 import { connectDB } from "@/lib/mongodb";
 import Articles from "@/models/article";
-import { log } from "console";
 import { NextResponse } from "next/server";
 
 export async function GET() {

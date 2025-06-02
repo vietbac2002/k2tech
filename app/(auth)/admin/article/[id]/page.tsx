@@ -2,27 +2,6 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 import ReactQuill from 'react-quill-new';
-const formatContent = (text: string) => {
-    // Split by double newlines to get paragraphs
-    const paragraphs = text.split(/\n\s*\n/);
-
-    return paragraphs.map((paragraph, index) => {
-        // Split each paragraph by single newlines for <br> tags
-        const lines = paragraph.split('\n');
-
-        return (
-            <p key={index} className="mb-4">
-                {lines.map((line, lineIndex) => (
-                    <React.Fragment key={lineIndex}>
-                        {lineIndex > 0 && <br />}
-                        {line}
-                    </React.Fragment>
-                ))}
-            </p>
-        );
-    });
-};
-
 const convertDate = (date: string) => {
     //  2025-05-31T12:20:41.770Z
     // convert date like above to "mm/dd/yyyy"

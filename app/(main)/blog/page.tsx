@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react'
-
+import Image from "next/image";
 export default function BlogPage() {
     const [articles, setArticles] = useState([]);
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function BlogPage() {
         getArticles();
     }, [])
     console.log(articles);
-    
+
     return (
         <>
             {/* // <!-- Hero Section --> */}
@@ -43,7 +43,7 @@ export default function BlogPage() {
                     {/* <!-- Featured Post --> */}
                     <div className="md:w-full">
                         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            <Image width={50} height={50} src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                                 alt="Featured post" className="w-full h-64 object-cover" />
                             <div className="p-6">
                                 <div className="flex items-center text-sm text-gray-500 mb-2">
@@ -77,30 +77,35 @@ export default function BlogPage() {
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8">
-                            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                            <div className="bg-white flex flex-col items-center justify-center p-8 rounded-xl shadow-sm hover:shadow-md transition">
                                 <div className="feature-icon bg-indigo-100 text-indigo-600">
                                     <i className="fas fa-ticket-alt text-2xl"></i>
                                 </div>
-                                <h3 className="text-xl font-bold mb-3">Ticketing & Registration</h3>
-                                <p className="text-gray-600">Sell tickets online with multiple ticket types, discounts, and promo codes. Manage attendees with ease.</p>
+                                <h3 className="text-xl font-bold mb-3">Đăng ký và quản lý vé mời</h3>
+                                <p className="text-gray-600 text-center">
+                                    Cung cấp đa dạng với nhiều loại vé mời, giảm thiểu phí và mã quảng cáo. Quản lý người tham dự dễ dàng.
+                                </p>
                             </div>
 
-                            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                            <div className="bg-white flex flex-col items-center justify-center p-8 rounded-xl shadow-sm hover:shadow-md transition">
                                 <div className="feature-icon bg-purple-100 text-purple-600">
                                     <i className="fas fa-chart-line text-2xl"></i>
                                 </div>
                                 <h3 className="text-xl font-bold mb-3">Check-in</h3>
-                                <p className="text-gray-600">Get real-time insights into ticket sales, attendee demographics, and event performance metrics.</p>
+                                <p className="text-gray-600 text-center">
+                                    Cung cấp thông tin thời gian check-in, thống kê số lượng khách mời, và các đồ thị phân tích về hiệu suất sự kiện.
+                                </p>
                             </div>
 
-                            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                            <div className="bg-white  flex flex-col items-center justify-center p-8 rounded-xl shadow-sm hover:shadow-md transition">
                                 <div className="feature-icon bg-blue-100 text-blue-600">
                                     <i className="fas fa-envelope-open-text text-2xl"></i>
                                 </div>
-                                <h3 className="text-xl font-bold mb-3">Attendee Management</h3>
-                                <p className="text-gray-600">Send targeted email campaigns to promote your event and keep attendees engaged.</p>
+                                <h3 className="text-xl font-bold mb-3">Quản lý người tham dự</h3>
+                                <p className="text-gray-600 text-center">
+                                    Gửi email khách mời để tổ chức sự kiện và giúp người tham dự đến sự kiện.
+                                </p>
                             </div>
-
 
                         </div>
                     </div>
@@ -112,7 +117,7 @@ export default function BlogPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* <!-- Post 1 --> */}
                         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            <Image width={50} height={50} src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                                 alt="Post image" className="w-full h-48 object-cover" />
                             <div className="p-6">
                                 <div className="flex items-center text-sm text-gray-500 mb-2">
@@ -124,7 +129,7 @@ export default function BlogPage() {
                                     How to Promote Your Event on Social Media
                                 </h3>
                                 <p className="text-gray-600 mb-4">
-                                    Effective strategies to boost your event's visibility across all major platforms...
+                                    {"Effective strategies to boost your event's visibility across all major platforms..."}
                                 </p>
                                 <a href="#" className="text-indigo-600 font-medium hover:text-indigo-800">Read more →</a>
                             </div>
@@ -132,7 +137,7 @@ export default function BlogPage() {
 
                         {/* <!-- Post 2 --> */}
                         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            <Image width={50} height={50} src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                                 alt="Post image" className="w-full h-48 object-cover" />
                             <div className="p-6">
                                 <div className="flex items-center text-sm text-gray-500 mb-2">
@@ -152,7 +157,7 @@ export default function BlogPage() {
 
                         {/* <!-- Post 3 --> */}
                         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            <Image width={50} height={50} src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                                 alt="Post image" className="w-full h-48 object-cover" />
                             <div className="p-6">
                                 <div className="flex items-center text-sm text-gray-500 mb-2">
@@ -173,18 +178,7 @@ export default function BlogPage() {
                 </div>
 
                 {/* <!-- Newsletter --> */}
-                <div className="mt-16 bg-indigo-50 rounded-lg p-8">
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-2xl font-bold text-gray-900 mb-2">Subscribe to our newsletter</h2>
-                        <p className="text-gray-600 mb-6">Get the latest event trends and tips delivered to your inbox</p>
-                        <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-                            <input type="email" placeholder="Your email address" className="flex-grow px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-                            <button className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                                Subscribe
-                            </button>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </>
     )

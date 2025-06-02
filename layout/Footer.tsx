@@ -4,15 +4,15 @@ import React from 'react'
 
 const product = [
     {
-        name: "Features",
+        name: "Tính năng",
         link: "/solution"
     },
     {
-        name: "Pricing",
+        name: "Giá",
         link: "/price"
     },
     {
-        name: "Integrations",
+        name: "Tích hợp",
         link: "/"
     },
    
@@ -24,25 +24,25 @@ const resources = [
         link: "/blog"
     },
     {
-        name: "Help Center",
+        name: "Trung tâm trợ giúp",
         link: "/support"
     },
     {
-        name: "Community",
+        name: "Cộng đồng",
         link: "/"
     }
 ]
 const company = [
     {
-        name: "About Us",
+        name: "Giới thiệu",
         link: "/"
     },
     {
-        name: "Contact",
+        name: "Liên hệ",
         link: "/contact"
     },
     {
-        name: "Partners",
+        name: "Đối tác",
         link: "/"
     }
 ]
@@ -71,7 +71,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h3 className="font-bold text-lg mb-4">Product</h3>
+                        <h3 className="font-bold text-lg mb-4">Sản phẩm</h3>
                         <ul className="space-y-2">
                            {
                                product.map((item, index) => (
@@ -82,7 +82,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h3 className="font-bold text-lg mb-4">Resources</h3>
+                        <h3 className="font-bold text-lg mb-4">Tham khảo</h3>
                         <ul className="space-y-2">
                             {
                                 resources.map((item, index) => (
@@ -93,7 +93,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h3 className="font-bold text-lg mb-4">Company</h3>
+                        <h3 className="font-bold text-lg mb-4">Công ty</h3>
                         <ul className="space-y-2">
                             {
                                 company.map((item, index) => (
@@ -107,11 +107,11 @@ export default function Footer() {
 
                 <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-gray-400 mb-4 md:mb-0">© 2025 K2Tech. All rights reserved.</p>
-                    <div className="flex space-x-6">
+                    {/* <div className="flex space-x-6">
                         <a href="#" className="text-gray-400 hover:text-white">Privacy Policy</a>
                         <a href="#" className="text-gray-400 hover:text-white">Terms of Service</a>
                         <a href="#" className="text-gray-400 hover:text-white">Cookie Policy</a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>

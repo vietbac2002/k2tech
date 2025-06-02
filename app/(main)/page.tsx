@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
+import Image from "next/image";
 
 export default function Home() {
 
@@ -97,7 +97,7 @@ export default function Home() {
             {/* <!-- Event Card 1 --> */}
             <div className="event-card bg-white rounded-xl overflow-hidden shadow-sm transition duration-300">
               <div className="relative">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="banner" className="w-full h-48 object-cover" />
+                <Image loading="lazy" width={1470} height={48} src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="banner" className="w-full h-48 object-cover" />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow">
                   <i className="fas fa-music mr-1 text-indigo-600"></i> Music
                 </div>
@@ -126,7 +126,7 @@ export default function Home() {
             {/* <!-- Event Card 2 --> */}
             <div className="event-card bg-white rounded-xl overflow-hidden shadow-sm transition duration-300">
               <div className="relative">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tech Conference" className="w-full h-48 object-cover" />
+                <Image width={50} height={100} loading="lazy" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tech Conference" className="w-full h-48 object-cover" />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow">
                   <i className="fas fa-laptop-code mr-1 text-blue-600"></i> Tech
                 </div>
@@ -155,7 +155,7 @@ export default function Home() {
             {/* <!-- Event Card 3 --> */}
             <div className="event-card bg-white rounded-xl overflow-hidden shadow-sm transition duration-300">
               <div className="relative">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Food Festival" className="w-full h-48 object-cover" />
+                <Image width={100} height={50} loading="lazy" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Food Festival" className="w-full h-48 object-cover" />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow">
                   <i className="fas fa-utensils mr-1 text-red-600"></i> Food
                 </div>
@@ -189,21 +189,21 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted by Thousands of Event Organizers</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Don't just take our word for it. Here's what our customers say about us.</p>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">{"Don't just take our word for it. Here's what our customers say about us."}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="testimonial-card bg-white p-8 rounded-xl shadow-sm">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0">
-                  <img loading="lazy" className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" />
+                  <Image width={100} height={50} loading="lazy" className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" />
                 </div>
                 <div className="ml-4">
                   <div className="font-bold">Sarah Johnson</div>
                   <div className="text-gray-600">Event Manager, TechConf</div>
                 </div>
               </div>
-              <p className="text-gray-600 mb-6">K2Tech has transformed how we organize our annual tech conference. The ticketing system is seamless, and the analytics help us make data-driven decisions."</p>
+              <p className="text-gray-600 mb-6">{"K2Tech has transformed how we organize our annual tech conference. The ticketing system is seamless, and the analytics help us make data-driven decisions."}</p>
               <div className="flex text-yellow-400">
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
@@ -216,14 +216,14 @@ export default function Home() {
             <div className="testimonial-card bg-white p-8 rounded-xl shadow-sm">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0">
-                  <img loading="lazy" className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/43.jpg" alt="Michael Chen" />
+                  <Image width={100} height={50} loading="lazy" className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/43.jpg" alt="Michael Chen" />
                 </div>
                 <div className="ml-4">
                   <div className="font-bold">Michael Chen</div>
                   <div className="text-gray-600">Founder, FoodFest Co.</div>
                 </div>
               </div>
-              <p className="text-gray-600 mb-6">"The check-in app alone has saved us hundreds of hours. Our attendees love how smooth the experience is from ticket purchase to event day."</p>
+              <p className="text-gray-600 mb-6">{"The check-in app alone has saved us hundreds of hours. Our attendees love how smooth the experience is from ticket purchase to event day."}</p>
               <div className="flex text-yellow-400">
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
@@ -236,14 +236,14 @@ export default function Home() {
             <div className="testimonial-card bg-white p-8 rounded-xl shadow-sm">
               <div className="flex items-center mb-6">
                 <div className="flex-shrink-0">
-                  <img loading="lazy" className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez" />
+                  <Image width={100} height={50} loading="lazy" className="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez" />
                 </div>
                 <div className="ml-4">
                   <div className="font-bold">Emily Rodriguez</div>
                   <div className="text-gray-600">Marketing Director, MusicFest</div>
                 </div>
               </div>
-              <p className="text-gray-600 mb-6">"We've increased our ticket sales by 40% since switching to K2Tech. The marketing tools and integrations are game-changers for event promotion."</p>
+              <p className="text-gray-600 mb-6">{"We've increased our ticket sales by 40% since switching to K2Tech. The marketing tools and integrations are game-changers for event promotion."}</p>
               <div className="flex text-yellow-400">
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>

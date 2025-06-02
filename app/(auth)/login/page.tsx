@@ -1,5 +1,5 @@
 "use client";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -55,7 +55,7 @@ export default function Login() {
           href="/register"
           className="text-sm text-[#888] transition duration-150 ease hover:text-black"
         >
-          Don't have an account?
+          {"Don't have an account?"}
         </Link>
       </form>
     </section>

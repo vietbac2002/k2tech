@@ -18,7 +18,6 @@ export async function GET(
 }
 
 export async function DELETE(
-  request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
@@ -72,19 +71,26 @@ export async function PUT(
       message: "Cập nhật thành công",
       data: existingArticle,
     });
-  } catch (error: any) {
-    console.error("Update error:", error);
+  } catch (error) {
 
-    // Handle invalid ObjectId
-    if (error.name === "CastError") {
+    if (error instanceof Error) {
+      // Handle invalid ObjectId (Mongoose CastError)
+      if (error.name === "CastError") {
+        return NextResponse.json(
+          { message: "Invalid ID format" },
+          { status: 400 }
+        );
+      }
+
       return NextResponse.json(
-        { message: "Invalid ID format" },
-        { status: 400 }
+        { message: error.message || "Internal server error" },
+        { status: 500 }
       );
     }
 
+    // Handle non-Error objects
     return NextResponse.json(
-      { message: error.message || "Internal server error" },
+      { message: "An unexpected error occurred" },
       { status: 500 }
     );
   }
