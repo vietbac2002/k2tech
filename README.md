@@ -27,6 +27,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Database: It uses MongoDB for data storage.
 
 ## Structure project
+```
 ├── app # Next.js 13+ application directory
 │   ├── (auth) # Route group for authentication pages
 │   │   ├── admin # Admin panel pages
@@ -77,6 +78,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 │   └── (other static assets like svgs)
 └── services # Service layer code (e.g., registration service)
     └── register.ts
+```
 
 
 
