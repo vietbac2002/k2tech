@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import ReactQuill from "react-quill-new";
+// import ReactQuill from "react-quill-new";
 
 export default function CreateArticle() {
     const router = useRouter();
@@ -83,7 +83,7 @@ export default function CreateArticle() {
                         {/* <!-- Content Editor --> */}
                         <div>
                             <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">Content</label>
-                            <ReactQuill theme="snow" value={blog.content} onChange={handleContentChange} placeholder="Write your blog post content here..." />
+                            {/* <ReactQuill theme="snow" value={blog.content} onChange={handleContentChange} placeholder="Write your blog post content here..." /> */}
 
                         </div>
 

@@ -54,7 +54,7 @@ export default function ArticlePage() {
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                         {
-                            articles.map((article: Article, index: number) => (
+                            articles.length > 0 ? articles.map((article: Article, index: number) => (
                                 <tr key={index}>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex items-center">
@@ -89,6 +89,10 @@ export default function ArticlePage() {
                                     </td>
                                 </tr>
                             ))
+                            :
+                            <tr>
+                                <td colSpan={6} className="px-6 py-4 whitespace-nowrap"></td>
+                            </tr>
                         }
                         {/* <tr>
                             <td className="px-6 py-4 whitespace-nowrap">
