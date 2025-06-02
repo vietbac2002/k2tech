@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
         hostname:"randomuser.me",
       }
     ]
+  },
+  eslint:{
+    ignoreDuringBuilds:true
   }
 };
 

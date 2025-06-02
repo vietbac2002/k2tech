@@ -7,7 +7,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Layout, Menu, theme } from 'antd';
+import { Layout, Menu } from 'antd';
 import { useRouter } from 'next/navigation';
 
 const { Content, Footer, Sider } = Layout;

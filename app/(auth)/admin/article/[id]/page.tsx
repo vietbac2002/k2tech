@@ -1,6 +1,7 @@
 
 "use client";
 import React, { useEffect, useState } from 'react'
+import Image from "next/image";
 import ReactQuill from 'react-quill-new';
 const convertDate = (date: string) => {
     //  2025-05-31T12:20:41.770Z
@@ -29,7 +30,7 @@ export default function ArticleDetail({
             setArticle(data.data)
         }
         getArticle()
-    }, [])
+    }, [params])
     console.log(article);
 
     return (
@@ -37,7 +38,7 @@ export default function ArticleDetail({
             {/* <!-- Blog Post --> */}
             <article className="bg-white shadow-md rounded-lg overflow-hidden">
                 {/* <!-- Featured Image (optional) --> */}
-                <img src="https://images.unsplash.com/photo-1553136380-a72e2bd822fe?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blog post featured image" className="w-full h-64 object-cover" />
+                <Image width={50} height={50} src="https://images.unsplash.com/photo-1553136380-a72e2bd822fe?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blog post featured image" className="w-full h-64 object-cover" />
 
                 {/* <!-- Post Content --> */}
                 <div className="p-6 md:p-8">
