@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
+import Img from "@/components/Img";
+import Chatbot from "@/components/Chatbot";
 export default function Home() {
 
   return (
@@ -97,7 +98,8 @@ export default function Home() {
             {/* <!-- Event Card 1 --> */}
             <div className="event-card bg-white rounded-xl overflow-hidden shadow-sm transition duration-300">
               <div className="relative">
-                <Image loading="lazy" width={1470} height={48} src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="banner" className="w-full h-48 object-cover" />
+                <Img url="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&w=800&q=75"
+                />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow">
                   <i className="fas fa-music mr-1 text-indigo-600"></i> Music
                 </div>
@@ -126,7 +128,8 @@ export default function Home() {
             {/* <!-- Event Card 2 --> */}
             <div className="event-card bg-white rounded-xl overflow-hidden shadow-sm transition duration-300">
               <div className="relative">
-                <Image width={50} height={100} loading="lazy" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tech Conference" className="w-full h-48 object-cover" />
+                <Img url="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&w=800&q=75"
+                />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow">
                   <i className="fas fa-laptop-code mr-1 text-blue-600"></i> Tech
                 </div>
@@ -155,7 +158,7 @@ export default function Home() {
             {/* <!-- Event Card 3 --> */}
             <div className="event-card bg-white rounded-xl overflow-hidden shadow-sm transition duration-300">
               <div className="relative">
-                <Image width={100} height={50} loading="lazy" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Food Festival" className="w-full h-48 object-cover" />
+                <Img url="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&w=800&q=75" />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow">
                   <i className="fas fa-utensils mr-1 text-red-600"></i> Food
                 </div>
@@ -269,6 +272,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Chatbot />
     </>
   );
 }

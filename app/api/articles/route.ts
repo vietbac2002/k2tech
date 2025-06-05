@@ -2,11 +2,28 @@ import { connectDB } from "@/lib/mongodb";
 import Articles from "@/models/article";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
     await connectDB();
-    const articles = await Articles.find();
-    return NextResponse.json({ data: articles });
+    const url = new URL(req.url);
+    const page = parseInt(url.searchParams.get("page") || "0");
+    const limit = parseInt(url.searchParams.get("limit") || "3");
+    const skip = page * limit;
+
+    const [articles, total] = await Promise.all([
+      Articles.find().sort({ createdAt: -1 }).skip(skip).limit(limit),
+      Articles.countDocuments(),
+    ]);
+
+    return NextResponse.json({
+      data: articles,
+      metadata: {
+        currentPage: page,
+        totalPages: Math.ceil(total / limit),
+        totalItems: total,
+        itemsPerPage: limit,
+      },
+    });
   } catch (error) {
     return NextResponse.json({ message: error });
   }

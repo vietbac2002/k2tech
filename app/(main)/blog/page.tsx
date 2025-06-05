@@ -1,24 +1,80 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
+import { convertDate } from '@/utils/convert';
+import Link from 'next/link';
+
+type Article = {
+    title: string;
+    content: string;
+    author: string;
+    tags: string;
+    _id: string;
+    createdAt: string;
+}
+
+type PaginationMetadata = {
+    currentPage: number;
+    totalPages: number;
+    totalItems: number;
+    itemsPerPage: number;
+}
+
+// type Article = {
+//     title: string;
+//     content: string;
+//     author: string;
+//     tags: string;
+//     _id: string;
+//     createdAt: string;
+// }
+
+// type PaginationMetadata = {
+//     currentPage: number;
+//     totalPages: number;
+//     totalItems: number;
+//     itemsPerPage: number;
+// }
+
 export default function BlogPage() {
-    const [articles, setArticles] = useState([]);
-    useEffect(() => {
-        const getArticles = async () => {
-            try {
-                const response = await fetch('/api/articles');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch articles');
-                }
-                const { data } = await response.json();
-                setArticles(data);
-            } catch (error) {
-                console.log(error);
+    const [articles, setArticles] = useState<Article[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [metadata, setMetadata] = useState<PaginationMetadata | null>(null);
+    const [page, setPage] = useState(0);
+
+    const fetchArticles = async (currentPage: number) => {
+        try {
+            setLoading(true);
+            const response = await fetch(`/api/articles?page=${currentPage}&limit=3`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch articles');
             }
+            const { data, metadata } = await response.json();
+
+            if (currentPage === 0) {
+                setArticles(data);
+            } else {
+                setArticles(prev => [...prev, ...data]);
+            }
+            setMetadata(metadata);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setLoading(false);
         }
-        getArticles();
-    }, [])
-    console.log(articles);
+    };
+
+    useEffect(() => {
+        fetchArticles(0);
+    }, []);
+
+    const handleLoadMore = () => {
+        if (metadata && page < metadata.totalPages - 1) {
+            const nextPage = page + 1;
+            setPage(nextPage);
+            fetchArticles(nextPage);
+        }
+    };
 
     return (
         <>
@@ -32,153 +88,47 @@ export default function BlogPage() {
                         </p>
                     </div>
                 </div>
-
             </div>
 
-
-
-            {/* <!-- Main Content --> */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="flex flex-col md:flex-row gap-8">
-                    {/* <!-- Featured Post --> */}
-                    <div className="md:w-full">
-                        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <Image width={50} height={50} src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="Featured post" className="w-full h-64 object-cover" />
-                            <div className="p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {articles.map((article: Article, index: number) => (
+                        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
+                            <Image width={800} height={400} src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&w=800&q=75"
+                                alt="Post image"
+                                className="w-full h-48 object-cover"
+                                sizes="(max-width: 768px) 100vw, 800px"
+                                placeholder="blur"
+                                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4dHRsdHR4dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR3/2wBDAR4SEhQdFB4VFR4dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR3/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                            />
+                            <div className="flex flex-col p-6 flex-grow">
                                 <div className="flex items-center text-sm text-gray-500 mb-2">
-                                    <span>Event Planning</span>
+                                    <span>{article.tags}</span>
                                     <span className="mx-2">•</span>
-                                    <span>May 15, 2023</span>
+                                    <span>{convertDate(article.createdAt)}</span>
                                 </div>
-                                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                                    The Ultimate Guide to Virtual Event Success in 2023
-                                </h2>
-                                <p className="text-gray-600 mb-4">
-                                    Discover the latest trends and strategies to make your virtual events stand out this year...
-                                </p>
-                                <a href="#" className="text-indigo-600 font-medium hover:text-indigo-800">Read more →</a>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                    {article.title}
+                                </h3>
+                                <div className="mt-auto pt-4">
+                                    <Link href={`/blog/${article._id}`} className="text-indigo-600 font-medium hover:text-indigo-800">Read more</Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    {/* <!-- Sidebar --> */}
-
+                    ))}
                 </div>
 
-
-
-
-                <section className="py-20">
-                    <div className="container mx-auto px-4">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">Kiến thức cơ bản</h2>
-                            {/* <p className="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to create, manage, and grow your events in one place.</p> */}
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-8">
-                            <div className="bg-white flex flex-col items-center justify-center p-8 rounded-xl shadow-sm hover:shadow-md transition">
-                                <div className="feature-icon bg-indigo-100 text-indigo-600">
-                                    <i className="fas fa-ticket-alt text-2xl"></i>
-                                </div>
-                                <h3 className="text-xl font-bold mb-3">Đăng ký và quản lý vé mời</h3>
-                                <p className="text-gray-600 text-center">
-                                    Cung cấp đa dạng với nhiều loại vé mời, giảm thiểu phí và mã quảng cáo. Quản lý người tham dự dễ dàng.
-                                </p>
-                            </div>
-
-                            <div className="bg-white flex flex-col items-center justify-center p-8 rounded-xl shadow-sm hover:shadow-md transition">
-                                <div className="feature-icon bg-purple-100 text-purple-600">
-                                    <i className="fas fa-chart-line text-2xl"></i>
-                                </div>
-                                <h3 className="text-xl font-bold mb-3">Check-in</h3>
-                                <p className="text-gray-600 text-center">
-                                    Cung cấp thông tin thời gian check-in, thống kê số lượng khách mời, và các đồ thị phân tích về hiệu suất sự kiện.
-                                </p>
-                            </div>
-
-                            <div className="bg-white  flex flex-col items-center justify-center p-8 rounded-xl shadow-sm hover:shadow-md transition">
-                                <div className="feature-icon bg-blue-100 text-blue-600">
-                                    <i className="fas fa-envelope-open-text text-2xl"></i>
-                                </div>
-                                <h3 className="text-xl font-bold mb-3">Quản lý người tham dự</h3>
-                                <p className="text-gray-600 text-center">
-                                    Gửi email khách mời để tổ chức sự kiện và giúp người tham dự đến sự kiện.
-                                </p>
-                            </div>
-
-                        </div>
+                {metadata && page < metadata.totalPages - 1 && (
+                    <div className="flex justify-center mt-8">
+                        <button
+                            onClick={handleLoadMore}
+                            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                            disabled={loading}
+                        >
+                            {loading ? 'Loading...' : 'Load More Articles'}
+                        </button>
                     </div>
-                </section>
-
-                {/* <!-- Recent Posts Grid --> */}
-                <div className="mt-12">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Recent Posts</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* <!-- Post 1 --> */}
-                        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <Image width={50} height={50} src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="Post image" className="w-full h-48 object-cover" />
-                            <div className="p-6">
-                                <div className="flex items-center text-sm text-gray-500 mb-2">
-                                    <span>Event Marketing</span>
-                                    <span className="mx-2">•</span>
-                                    <span>May 10, 2023</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                                    How to Promote Your Event on Social Media
-                                </h3>
-                                <p className="text-gray-600 mb-4">
-                                    {"Effective strategies to boost your event's visibility across all major platforms..."}
-                                </p>
-                                <a href="#" className="text-indigo-600 font-medium hover:text-indigo-800">Read more →</a>
-                            </div>
-                        </div>
-
-                        {/* <!-- Post 2 --> */}
-                        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <Image width={50} height={50} src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="Post image" className="w-full h-48 object-cover" />
-                            <div className="p-6">
-                                <div className="flex items-center text-sm text-gray-500 mb-2">
-                                    <span>Case Study</span>
-                                    <span className="mx-2">•</span>
-                                    <span>April 28, 2023</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                                    How Company X Increased Attendance by 300%
-                                </h3>
-                                <p className="text-gray-600 mb-4">
-                                    A deep dive into the strategies that transformed their event marketing...
-                                </p>
-                                <a href="#" className="text-indigo-600 font-medium hover:text-indigo-800">Read more →</a>
-                            </div>
-                        </div>
-
-                        {/* <!-- Post 3 --> */}
-                        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                            <Image width={50} height={50} src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                alt="Post image" className="w-full h-48 object-cover" />
-                            <div className="p-6">
-                                <div className="flex items-center text-sm text-gray-500 mb-2">
-                                    <span>Hybrid Events</span>
-                                    <span className="mx-2">•</span>
-                                    <span>April 15, 2023</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                                    The Future of Hybrid Events: What to Expect
-                                </h3>
-                                <p className="text-gray-600 mb-4">
-                                    Emerging trends and technologies shaping the hybrid event landscape...
-                                </p>
-                                <a href="#" className="text-indigo-600 font-medium hover:text-indigo-800">Read more →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* <!-- Newsletter --> */}
-
+                )}
             </div>
         </>
     )

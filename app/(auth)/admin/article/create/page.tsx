@@ -2,8 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-// import ReactQuill from "react-quill-new";
-
+import TipTap from "@/components/Tiptap";
 export default function CreateArticle() {
     const router = useRouter();
     const [blog, setBlog] = useState({
@@ -11,7 +10,6 @@ export default function CreateArticle() {
         content: "",
         tags: "",
     })
-
     const createArticle = async () => {
         if (!blog.title || !blog.content || !blog.tags) {
             alert("Please fill all fields");
@@ -51,6 +49,8 @@ export default function CreateArticle() {
         })
 
     }
+    console.log("content is ",blog.content);
+    
     return (
         <>
             <div className="container mx-auto px-4 py-8">
@@ -83,8 +83,7 @@ export default function CreateArticle() {
                         {/* <!-- Content Editor --> */}
                         <div>
                             <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">Content</label>
-                            {/* <ReactQuill theme="snow" value={blog.content} onChange={handleContentChange} placeholder="Write your blog post content here..." /> */}
-
+                            <TipTap content={blog.content} setContent={(content) => handleContentChange(content)} />
                         </div>
 
                         {/* <!-- Tags Input --> */}

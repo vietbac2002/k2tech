@@ -2,10 +2,9 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
-import ReactQuill from 'react-quill-new';
+import { EditorContent, useEditor } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
 const convertDate = (date: string) => {
-    //  2025-05-31T12:20:41.770Z
-    // convert date like above to "mm/dd/yyyy"
     const dateParts = date.split("T")[0].split("-");
     return `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
 }
@@ -22,16 +21,27 @@ export default function ArticleDetail({
         createdAt: "",
         tags: ""
     });
+    const editor = useEditor({
+        extensions: [
+            StarterKit,
+        ],
+        content: ""
+    })
     useEffect(() => {
         const getArticle = async () => {
             const { id } = await params;
             const res = await fetch(`/api/articles/${id}`);
-            const data = await res.json()
-            setArticle(data.data)
+            const { data } = await res.json();
+            setArticle(data);
+            // set content to editor
+            if (!editor) return;
+            editor.commands.setContent(data.content);
         }
         getArticle()
-    }, [params])
-    console.log(article);
+    }, [params, editor])
+
+
+
 
     return (
         <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -64,12 +74,10 @@ export default function ArticleDetail({
                     </div>
 
                     {/* <!-- Content --> */}
-                    <div className="prose max-w-none text-gray-700">
-                        <ReactQuill
-                            value={article.content}
-                            readOnly={true}
-                            theme={"bubble"}
-                        />
+                    <div className="max-w-none">
+                        {/* how to show content with tiptap */}
+                        {/* <div dangerouslySetInnerHTML={{ __html: article.content }} className="prose prose-lg text-gray-700" /> */}
+                        <EditorContent editor={editor} />
                     </div>
                 </div>
 

@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 type Article = {
     title: string;
     content: string;
-    author: string;
     tags: string;
     _id: string;
 }
